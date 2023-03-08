@@ -1,14 +1,14 @@
 package id.ac.ui.cs.advprog.tutorial4.smartphone.core.components.processor;
 
-// TODO: Fix this class
+// TODO: DONE
 public class ExyYes implements Processor{
     @Override
     public Double getSpeed() {
-        return null;
+        return 3.8;
     }
 
     @Override
     public Double getPrice() {
-        return null;
+        return 420000.0;
     }
 }

@@ -1,14 +1,14 @@
 package id.ac.ui.cs.advprog.tutorial4.smartphone.core.components.screen;
 
-// TODO: Fix this class
+// TODO: DONE
 public class Delo implements Screen{
     @Override
     public Double getRefreshRate() {
-        return null;
+        return 60.0;
     }
 
     @Override
     public Double getPrice() {
-        return null;
+        return 120000.0;
     }
 }
