@@ -7,8 +7,10 @@ public abstract class SmartPhoneBuilder {
 
     public SmartPhone getSmartPhone(SmartPhoneBrand smartPhoneBrand){
         SmartPhone smartPhone = createSmartPhone(smartPhoneBrand);
-        // TODO: do something here
-
+        // TODO: DONE
+        // Panggil method create() dan calculatePrice() pada objek smartPhone
+        smartPhone.create();
+        smartPhone.calculatePrice();
         return  smartPhone;
     }
 }
