@@ -37,6 +37,9 @@ public class AuthentiationManager {
         if (tokenToUsernameMapping.containsKey(token)) {
             throw new UsernameAlreadyLoggedIn();
         }
+        if (tokenToUsernameMapping.containsValue(username)) {
+            throw new UsernameAlreadyLoggedIn();
+        }
         // Jika token tidak ada di dalam tokenToUsernameMapping, tambahkan token dan username ke dalam tokenToUsernameMapping
         tokenToUsernameMapping.put(token, username);
     }
