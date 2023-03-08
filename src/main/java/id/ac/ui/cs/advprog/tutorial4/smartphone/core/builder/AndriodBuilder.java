@@ -5,6 +5,7 @@ import id.ac.ui.cs.advprog.tutorial4.smartphone.repository.*;
 
 public class AndriodBuilder extends SmartPhoneBuilder{
     // TODO: DONE
+    // Tutorial 4 - Part 1 DONE
     // Buatlah sebuah method yang mengembalikan sebuah objek SmartPhone
     protected SmartPhone createSmartPhone(SmartPhoneBrand smartPhoneBrand){
         SmartPhone smartPhone = null;
