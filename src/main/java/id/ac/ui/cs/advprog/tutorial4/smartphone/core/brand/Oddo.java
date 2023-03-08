@@ -24,7 +24,8 @@ public class Oddo extends SmartPhone{
         Double processorPrice = getProcessor().getPrice();
         Double RAMPrice = getRAM().getPrice();
         Double screenPrice = getScreen().getPrice();
-        setPrice(processorPrice + RAMPrice + screenPrice);
+        Double priceFormula = 2 * (processorPrice + RAMPrice + screenPrice);
+        setPrice(priceFormula);
         System.out.println("Calculating price for " + getName());
     }
 }

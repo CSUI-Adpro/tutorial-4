@@ -24,7 +24,8 @@ public class Sumsang extends SmartPhone{
         Double processorPrice = getProcessor().getPrice();
         Double RAMPrice = getRAM().getPrice();
         Double screenPrice = getScreen().getPrice();
-        setPrice(processorPrice + RAMPrice + screenPrice);
+        Double priceFormula = 3 * processorPrice + 3 * RAMPrice + 1.5 * screenPrice;
+        setPrice(priceFormula);
         System.out.println("Calculating price for " + getName());
     }
 }
