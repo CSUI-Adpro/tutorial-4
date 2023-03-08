@@ -50,9 +50,14 @@ public class AuthenticationController {
     @GetMapping(path = "/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response,
                          @CookieValue(name="token", defaultValue = "") String token)  {
-        // TODO.
-        //  Jangan lupa pertimbangkan kasus di mana pengguna yang logged-out tetapi masih tetap menekan tombol log-out.
-        //  Pada kasus tersebut, cukup redirect:login saja tanpa perlu mengeluarkan pesan apapun
+        // TODO: DONE
+        // Jangan lupa pertimbangkan kasus di mana pengguna yang logged-out tetapi masih tetap menekan tombol log-out.
+        // Pada kasus tersebut, cukup redirect:login saja tanpa perlu mengeluarkan pesan apapun
+        if (Objects.equals(token, "")) {
+            return "redirect:login";
+        }
+        authenticationService.logout(token);
+        clearAllCookies(request, response);
         return "redirect:login";
     }
     
