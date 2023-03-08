@@ -26,10 +26,10 @@ public class AuthentiationManager {
     
     
     // TODO: DONE
-    //  lengkapi method-method di bawah ini, serta jangan lupa mengimplementasi supaya
-    //  method-method tersebut throw exception yang tepat.
-    //  Jangan lupa juga untuk mempelajari kegunaan @ControllerAdvice
-    //  dan peran dari masing-masing class pada bagian tutorial ini
+    // lengkapi method-method di bawah ini, serta jangan lupa mengimplementasi supaya
+    // method-method tersebut throw exception yang tepat.
+    // Jangan lupa juga untuk mempelajari kegunaan @ControllerAdvice
+    // dan peran dari masing-masing class pada bagian tutorial ini
     
     public void registerNewToken(String token, String username){
         // TODO: DONE

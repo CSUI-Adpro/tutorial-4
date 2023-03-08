@@ -16,26 +16,45 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Autowired
     AccountRepository accountRepository;
 
-    // TODO inisialisasi authenticationManager yang sesuai
-    AuthentiationManager authenticationManager;
+    // TODO: DONE
+    // Inisialisasi authenticationManager yang sesuai
+    AuthentiationManager authenticationManager = AuthentiationManager.getInstance();
     
-    // TODO
-    //  Pada method-method di bawah ini, jangan lupa handle kasus untuk melakukan throw exception
+    // TODO: DONE
+    // Pada method-method di bawah ini, jangan lupa handle kasus untuk melakukan throw exception
     
     @Override
     public void register(String username, String password){
-        // TODO
+        // TODO: DONE
+        // Jika username sudah ada di dalam accountRepository, throw UsernameAlreadyExistsException
+        if (accountRepository.doesUsernameExist(username)) {
+            throw new UsernameAlreadyExistsException();
+        }
+        accountRepository.register(username, password);
     }
     
     @Override
     public String login(String username, String password){
-        // TODO
-        return null;  // return token
+        // TODO: DONE
+        // Jika username tidak ada di dalam accountRepository, throw UsernameDoesNotExistException
+        if (!accountRepository.doesUsernameExist(username)) {
+            throw new UsernameDoesNotExistException();
+        }
+        // Jika password tidak sama dengan password yang ada di dalam accountRepository, throw InvalidPasswordException
+        if (!accountRepository.getPassword(username).equals(password)) {
+            throw new InvalidPasswordException();
+        }
+        // Jika username dan password sesuai, buat token dan tambahkan ke dalam authenticationManager
+        String token = Util.generateToken();
+        authenticationManager.registerNewToken(token, username);
+        return token;  // return token
     }
     
     @Override
     public void logout(String token){
-        // TODO
+        // TODO: DONE
+        // Remove token dari authenticationManager
+        authenticationManager.removeToken(token);
     }
     
 }
